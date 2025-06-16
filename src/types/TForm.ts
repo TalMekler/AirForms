@@ -13,4 +13,5 @@ export type TForm = {
   categories: string[];
   tags: string[];
   expirationDate: string | null; // date in ISO format or null
+  timeToFill: string; // estimated time to fill the form, e.g., "5 minutes"
 };

@@ -1,184 +1,194 @@
 import type { TForm } from "../types/TForm";
 
-const form1: TForm = {
-  id: "form-1",
-  title: "Employee Feedback",
-  description: "Please provide your feedback about the workplace. Your opinion is valuable.",
+export const form: TForm = {
+  id: "1",
+  title: "בדיקה 1",
+  description: "לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר ",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
   author: {
     id: "user-1",
-    firstName: "John",
-    lastName: "Doe",
+    firstName: "טל",
+    lastName: "מקלר",
     email: "asd@gmail.com",
-    image: null,
+    image: "https://picsum.photos/200", // URL to the user's image or null if not available
     createdAt: "2023-10-01T12:00:00Z",
-    phoneNumber: null
+    phoneNumber: "0534657876"
   },
-  image: "",
-  categories: ["HR", "Feedback"],
-  tags: ["employee", "feedback", "workplace"],
-  expirationDate: "2023-12-31T00:00:00Z"
+  image: "https://picsum.photos/200",
+  categories: ["לוגיסטיקה", `אכ״א`, "דחיפות"],
+  tags: ["דוגמא", "דמו", "טופס"],
+  expirationDate: null,
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
-const form2: TForm = {
-  id: "form-2",
-  title: "Bug Report Form",
-  description: "Use this form to report any bugs you encounter, including steps to reproduce them.",
+export const form2: TForm = {
+  id: "2",
+  title: "בדיקה 2",
+  description: "השתמשו בטופס זה כדי לדווח על כל באג שאתם נתקלים בו, כולל שלבים לשחזורו.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
   author: {
     id: "user-2",
-    firstName: "meir",
-    lastName: "fried",
+    firstName: "מאיר",
+    lastName: "פריד",
     email: "meir@gmail.com",
-    image: null,
+    image: "https://picsum.photos/200",
     createdAt: "2023-10-01T12:00:00Z",
     phoneNumber: "0532712650"
   },
-  image: "",
+  image: "https://picsum.photos/200",
   categories: ["Development", "QA"],
-  tags: ["bug", "report", "issue"],
-  expirationDate: null
+  tags: ["באג", "דיווח", "נושא"],
+  expirationDate: null,
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form3: TForm = {
-  id: "form-3",
-  title: "Customer Survey",
-  description: "A short survey to help us improve our customer experience.",
+  id: "3",
+  title: "בדיקה 3",
+  description: "סקר קצר שיעזור לנו לשפר את חוויית הלקוח שלנו.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
   author: {
     id: "user-3",
-    firstName: "tal",
-    lastName: "mekler",
+    firstName: "טל",
+    lastName: "מקלר",
     email: "tal@gmail.com",
-    image: null,
+    image: "https://picsum.photos/200",
     createdAt: "2023-10-01T12:00:00Z",
-    phoneNumber: null
+    phoneNumber: "0534657876"
   },
-  image: "",
+  image: "https://picsum.photos/200",
   categories: ["Marketing"],
-  tags: ["survey", "customer", "feedback"],
-  expirationDate: "2023-12-25T00:00:00Z"
+  tags: ["סקר", "מכירות", "משוב"],
+  expirationDate: "2023-12-25T00:00:00Z",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form4: TForm = {
-  id: "form-4",
-  title: "Event Registration",
-  description: "Register for the upcoming event by filling in your details below.",
+  id: "4",
+  title: "בדיקה 4",
+  description: "הירשמו לאירוע הקרוב על ידי מילוי הפרטים שלכם למטה.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
   author: {
     id: "user-4",
-    firstName: "chanan",
-    lastName: "azulay",
+    firstName: "חנן",
+    lastName: "אזולאי",
     email: "chanan@gmail.com",
-    image: null,
+    image: "https://picsum.photos/200",
     createdAt: "2023-10-01T12:00:00Z",
-    phoneNumber: null
+    phoneNumber: "0534657876"
   },
-  image: "",
-  categories: ["Events"],
-  tags: ["event", "registration", "signup"],
-  expirationDate: null
+  image: "https://picsum.photos/200",
+  categories: ["אירועים", "הרשמה"],
+  tags: ["אירועים", "הרשמה", "כניסה"],
+  expirationDate: null,
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form5: TForm = {
-  id: "form-5",
-  title: "Technical Support Request",
-  description: "Submit your technical support request including device details and issue.",
+  id: "5",
+  title: "בדיקה 5",
+  description: "שלח את בקשת התמיכה הטכנית שלך, כולל פרטי המכשיר והבעיה.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
   author: {
     id: "user-5",
-    firstName: "eran",
-    lastName: "boolendian",
+    firstName: "ערן",
+    lastName: "בולנדיאן",
     email: "eran@gmail.com",
-    image: null,
+    image: "https://picsum.photos/200",
     createdAt: "2023-10-01T12:00:00Z",
-    phoneNumber: null
+    phoneNumber: "0534657876"
   },
-  image: "",
-  categories: ["IT", "Support"],
-  tags: ["support", "technical", "help"],
-  expirationDate: "2023-12-19T00:00:00Z"
+  image: "https://picsum.photos/200",
+  categories: ["תמיכה", "שיתוף"],
+  tags: ["תמיכה", "טכני", "עזרה"],
+  expirationDate: "2023-12-19T00:00:00Z",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form6: TForm = {
-  id: "form-6",
-  title: "Performance Review",
-  description: "Annual performance review form for employee evaluation.",
+  id: "6",
+  title: "בדיקה 6",
+  description: "טופס סקירת ביצועים שנתית להערכת עובדים.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
-  author: { ...form1.author },
-  image: "",
-  categories: ["HR", "Review"],
-  tags: ["review", "performance", "evaluation"],
-  expirationDate: null
+  author: { ...form.author },
+  image: "https://picsum.photos/200",
+  categories: ["HR", "סקירה"],
+  tags: ["סקירה", "ביצועים", "הערכה"],
+  expirationDate: "0876544567",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form7: TForm = {
-  id: "form-7",
-  title: "Product Order Form",
-  description: "Order your desired products using the form below. Prices may vary.",
+  id: "7",
+  title: "בדיקה 7",
+  description: "הזמינו את המוצרים הרצויים באמצעות הטופס למטה. המחירים עשויים להשתנות.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
-  author: { ...form1.author },
-  image: "",
-  categories: ["Sales", "Orders"],
-  tags: ["product", "order", "purchase"],
-  expirationDate: "2023-12-13T00:00:00Z"
+  author: { ...form.author },
+  image: "https://picsum.photos/200",
+  categories: ["מכירות", "קניות"],
+  tags: ["מוצרים", "מכירה", "לרכוש"],
+  expirationDate: "2023-12-13T00:00:00Z",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form8: TForm = {
-  id: "form-8",
-  title: "Newsletter Signup",
-  description: "Sign up for our monthly newsletter and stay updated.",
+  id: "8",
+  title: "בדיקה 8",
+  description: "הירשמו לניוזלטר החודשי שלנו והישארו מעודכנים.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
-  author: { ...form1.author },
-  image: "",
-  categories: ["Marketing", "Subscription"],
-  tags: ["newsletter", "email", "subscription"],
-  expirationDate: null
+  author: { ...form.author },
+  image: "https://picsum.photos/200",
+  categories: ["מכירות", "מנוי"],
+  tags: ["ניוזלטר", "דוא''ל", "הרשמה"],
+  expirationDate: "0987644576",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form9: TForm = {
-  id: "form-9",
-  title: "Internal Audit Checklist",
-  description: "Checklist for internal auditing purposes. Please follow steps precisely.",
+  id: "9",
+  title: "בדיקה 9",
+  description: "רשימת בדיקה למטרות ביקורת פנימית. אנא עקבו אחר השלבים במדויק.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
-  author: { ...form1.author },
-  image: "",
-  categories: ["Compliance", "Audit"],
-  tags: ["audit", "internal", "checklist"],
-  expirationDate: "2023-12-07T00:00:00Z"
+  author: { ...form.author },
+  image: "https://picsum.photos/200",
+  categories: ["תאימות", "ביקורת"],
+  tags: ["ביקורת", "פנימית", "רשימת תיוג"],
+  expirationDate: "2023-12-07T00:00:00Z",
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 const form10: TForm = {
-  id: "form-10",
-  title: "Leave Application",
-  description: "Apply for leave by selecting type, duration, and reason.",
+  id: "10",
+  title: "בדיקה 10",
+  description: "הגש בקשה לחופשה על ידי בחירת סוג, משך וסיבה.",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
   isPublished: true,
-  author: { ...form1.author },
-  image: "",
-  categories: ["HR", "Leave"],
-  tags: ["leave", "application", "absence"],
-  expirationDate: null
+  author: { ...form.author },
+  image: "https://picsum.photos/200",
+  categories: ["משאבי אנוש", "עזיבה"],
+  tags: ["חופשה", "בקשה", "היעדרות"],
+  expirationDate: null,
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 
-export const myForms: TForm[] = [form1, form6, form7, form8, form9, form10];
+export const myForms: TForm[] = [form, form6, form7, form8, form9, form10];
