@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Stack, Typography } from "@mui/material";
+import FormCard from "./components/FormCard";
+import { form } from "./mockData/forms";
+import { dateFormat, isoDateToDate } from "./utils/datetime";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Box p={5}>
+        <FormCard form={form}>
+          <Box border={1} width={400} borderRadius={2}>
+            <Stack
+              justifyContent={"end"}
+              height={160}
+              p={"21px"}
+              sx={{
+                backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${form.image})`,
+              }}
+            >
+              <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+                <Stack direction={"row"} gap={1}>
+                  <FormCard.Categories
+                    renderItem={(st: string) => (
+                      <Box bgcolor={"white"} py={"3px"} px={"5px"} borderRadius={1}>
+                        <Typography fontSize={11} color="#001c55">
+                          {st}
+                        </Typography>
+                      </Box>
+                    )}
+                  />
+                </Stack>
+                <Typography fontSize={15} fontWeight={300} color="white">
+                  {dateFormat(isoDateToDate(form.createdAt))}
+                </Typography>
+              </Stack>
+            </Stack>
+            <Stack p={2} gap={2}>
+              <FormCard.Title fontSize={20} fontWeight={600} />
+              <Box>
+                <Typography fontSize={15} fontWeight={500} color="#727272">
+                  תיאור הטופס
+                </Typography>
+                <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
+              </Box>
+              <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+                {/* Author */}
+                <Stack direction={"row"} alignItems={"center"} gap={1}>
+                  <Box width={24} height={24} borderRadius={"50%"} overflow={"hidden"}>
+                    <img src={form.author.image ?? ""} alt="" width={"100%"} height={"100%"} />
+                  </Box>
+                  <Typography fontSize={15} color="#727272">
+                    {form.author.firstName} {form.author.lastName}
+                  </Typography>
+                </Stack>
+                <Typography color="#727272">זמן מילוי כ-{form.timeToFill}</Typography>
+              </Stack>
+            </Stack>
+          </Box>
+        </FormCard>
+      </Box>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
