@@ -8,7 +8,7 @@ function App() {
     <>
       <Box p={5}>
         <FormCard form={form}>
-          <Box border={1} width={400} borderRadius={2}>
+          <Box width={400} borderRadius={2} overflow={"hidden"}>
             <Stack
               justifyContent={"end"}
               height={160}
