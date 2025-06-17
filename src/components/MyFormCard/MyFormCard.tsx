@@ -3,9 +3,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import { Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { form } from "../../mockData/forms";
-// Make sure FormCardComponent.tsx exists in the same folder, or update the path if it's elsewhere.
-import FormCard from "./FormCardComponent";
-const MyFormCards = () => {
+import FormCard from "../FormCard";
+
+const MyFormCard = () => {
     return (
         <>
             <Box p={5} boxShadow={3}>
@@ -72,4 +72,4 @@ const MyFormCards = () => {
     );
 }
 
-export default MyFormCards;
+export default MyFormCard;
