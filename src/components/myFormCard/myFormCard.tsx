@@ -7,18 +7,18 @@ import { dateFormat, isoDateToDate } from "../../utils/datetime";
 import FormCard from "../FormCard";
 import UserCard from "../UserCard/UserCard";
 
-const myFormCard = () => {
+const MyFormCard = () => {
     return (
         <>
-            <Box p={5}>
+            <Box p={5} boxShadow={3}>
                 <FormCard form={form}>
                     <Box width={400} borderRadius={2} overflow={"hidden"}>
                         <Stack p={2} gap={2}>
                             <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
                                 <Stack alignItems={"center"} direction={"row"} spacing={1}>
-                                    <UserCard user={form.author}>
-                                        <UserCard.Avatar sx={{ width: 24, height: 24 }} />
-                                    </UserCard>
+                                    <FormCard form={form}>
+                                        <FormCard.Image sx={{ width: 24, height: 24 }} />
+                                    </FormCard>
                                     <FormCard.Title fontSize={20} fontWeight={600} />
                                 </Stack>
                                 <Box display="flex" alignItems="center" gap={2}>
@@ -35,9 +35,13 @@ const myFormCard = () => {
                                             borderRadius: "20px",
                                         }}
                                     >
-                                        <Typography fontWeight="bold" fontSize="14px">
-                                            פעיל
-                                        </Typography>
+                                        {form.isPublished === true ?
+                                            <Typography fontWeight="bold" fontSize="14px">
+                                                פעיל
+                                            </Typography> :
+                                            <Typography fontWeight="bold" fontSize="14px">
+                                                לא פעיל
+                                            </Typography>}
                                         <CircleIcon sx={{ fontSize: 12, ml: 1, color: "green" }} />
                                     </Box>
                                 </Box>
@@ -59,9 +63,6 @@ const myFormCard = () => {
                                                 )}
                                             />
                                         </Stack>
-                                        <Typography fontSize={15} fontWeight={300} color="white">
-                                            {dateFormat(isoDateToDate(form.createdAt))}
-                                        </Typography>
                                     </Stack>
                                 </Stack>
                                 <Typography color="#727272">זמן מילוי כ-{form.timeToFill}</Typography>
@@ -74,4 +75,4 @@ const myFormCard = () => {
     );
 }
 
-export default myFormCard;
+export default MyFormCard;

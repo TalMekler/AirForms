@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Chip, Typography, type BoxProps, type TypographyProps } from "@mui/material";
+import { Box, Chip, Typography, Avatar, type BoxProps, type TypographyProps } from "@mui/material";
 import { type PropsWithChildren, type ReactNode } from "react";
 import { FormCardContext, useFormCardContext } from "../context/FormCardContext";
 import type { TForm } from "../types/TForm";
@@ -28,7 +28,7 @@ FormCard.Image = ({ ...props }: Omit<BoxProps, "children">) => {
   const { image } = useFormCardContext();
   return (
     <Box {...props}>
-      <img src={image} style={{ width: "100%", height: "100%" }} />
+      <Avatar src={image} style={{ width: "100%", height: "100%" }} />
     </Box>
   );
 };
