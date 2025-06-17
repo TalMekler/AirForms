@@ -6,7 +6,7 @@ const FormCardContext = createContext<TForm | undefined>(undefined);
 const useFormCardContext = () => {
   const context = useContext(FormCardContext);
   if (!context) {
-    throw new Error("useUserCard must be used within a <UserCard user={...}>");
+    throw new Error("useFormCard must be used within a <FormCard form={...}>");
   }
   return context;
 };
