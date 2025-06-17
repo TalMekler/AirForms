@@ -10,7 +10,6 @@ import UserCard from "../UserCard/UserCard";
 const myFormCard = () => {
     return (
         <>
-            <Typography align="center" variant="h4">טפסים שיצרתי</Typography>
             <Box p={5}>
                 <FormCard form={form}>
                     <Box width={400} borderRadius={2} overflow={"hidden"}>
