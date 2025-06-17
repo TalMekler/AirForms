@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Box p={5}>
-          <NavBar />
+
         <FormCard form={form}>
           <Box width={400} borderRadius={2} overflow={"hidden"}>
             <Stack
