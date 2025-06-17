@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import FormCard from "./components/FormCard";
 import { form } from "./mockData/forms";
 import { dateFormat, isoDateToDate } from "./utils/datetime";
+import UserCard from "./components/UserCard/UserCard";
 
 function App() {
   return (
@@ -43,15 +44,13 @@ function App() {
                 <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
               </Box>
               <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
-                {/* Author */}
-                <Stack direction={"row"} alignItems={"center"} gap={1}>
-                  <Box width={24} height={24} borderRadius={"50%"} overflow={"hidden"}>
-                    <img src={form.author.image ?? ""} alt="" width={"100%"} height={"100%"} />
-                  </Box>
-                  <Typography fontSize={15} color="#727272">
-                    {form.author.firstName} {form.author.lastName}
-                  </Typography>
-                </Stack>
+                <UserCard user={form.author}>
+                  <Stack direction={"row"} alignItems={"center"} gap={1}>
+                    <UserCard.Avatar sx={{ width: 24, height: 24 }} />
+                    <UserCard.FullName fontSize={15} color="#727272" />
+                  </Stack>
+                </UserCard>
+
                 <Typography color="#727272">זמן מילוי כ-{form.timeToFill}</Typography>
               </Stack>
             </Stack>
