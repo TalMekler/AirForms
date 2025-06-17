@@ -3,7 +3,6 @@ import FormCard from "./components/FormCard";
 import { form } from "./mockData/forms";
 import { dateFormat, isoDateToDate } from "./utils/datetime";
 import UserCard from "./components/UserCard/UserCard";
-import MyFormCard from "./components/MyFormCard/myFormCard";
 
 function App() {
   return (
@@ -57,7 +56,6 @@ function App() {
             </Stack>
           </Box>
         </FormCard>
-        <MyFormCard />
       </Box>
     </>
   );
