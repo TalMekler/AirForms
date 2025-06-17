@@ -20,7 +20,6 @@ const MyFormCard = () => {
                                     <FormCard.Title fontSize={20} fontWeight={600} />
                                 </Stack>
                                 <Box display="flex" alignItems="center" gap={2}>
-
                                     <ShareIcon sx={{ fontSize: 20, color: "#5C5C5C", cursor: "pointer" }} />
                                     <Box
                                         display="flex"
