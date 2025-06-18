@@ -18,11 +18,20 @@ function App() {
                 backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${form.image})`,
               }}
             >
-              <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+              <Stack
+                direction={"row"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+              >
                 <Stack direction={"row"} gap={1}>
                   <FormCard.Categories
                     renderItem={(st: string) => (
-                      <Box bgcolor={"white"} py={"3px"} px={"5px"} borderRadius={1}>
+                      <Box
+                        bgcolor={"white"}
+                        py={"3px"}
+                        px={"5px"}
+                        borderRadius={1}
+                      >
                         <Typography fontSize={11} color="#001c55">
                           {st}
                         </Typography>
@@ -41,17 +50,26 @@ function App() {
                 <Typography fontSize={15} fontWeight={500} color="#727272">
                   תיאור הטופס
                 </Typography>
-                <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
+                <FormCard.Description
+                  fontSize={15}
+                  fontWeight={500}
+                  color="#727272"
+                />
               </Box>
-              <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
+              <Stack
+                direction={"row"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+              >
                 <UserCard user={form.author}>
                   <Stack direction={"row"} alignItems={"center"} gap={1}>
                     <UserCard.Avatar sx={{ width: 24, height: 24 }} />
                     <UserCard.FullName fontSize={15} color="#727272" />
                   </Stack>
                 </UserCard>
-
-                <Typography color="#727272">זמן מילוי כ-{form.timeToFill}</Typography>
+                <Typography color="#727272">
+                  זמן מילוי כ-{form.timeToFill}
+                </Typography>
               </Stack>
             </Stack>
           </Box>
