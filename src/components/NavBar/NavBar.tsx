@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Toolbar } from '@mui/material';
 import NavButtonsGroup from './NavButtonsGroup';
 
 const NavBar: React.FC = () => {
@@ -7,10 +7,6 @@ const NavBar: React.FC = () => {
         <AppBar position="static" color="transparent" elevation={0}>
             <Toolbar sx={{ justifyContent: 'space-between' }}>
                 <NavButtonsGroup />
-                <Typography variant="h6" fontWeight="bold" color="black">
-                    Air Forms
-                </Typography>
-
             </Toolbar>
         </AppBar>
     );
