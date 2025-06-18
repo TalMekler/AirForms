@@ -3,6 +3,7 @@ import FormCard from "./components/FormCard";
 import { form } from "./mockData/forms";
 import { dateFormat, isoDateToDate } from "./utils/datetime";
 import UserCard from "./components/UserCard/UserCard";
+import HeroSection from "./components/HeroSection/HeroSection";
 
 function App() {
   return (
