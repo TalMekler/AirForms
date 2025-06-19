@@ -1,5 +1,5 @@
 import { Bookmark, IosShare } from "@mui/icons-material";
-import { Chip, Stack, Typography } from "@mui/material";
+import { Box, Chip, Stack, Typography } from "@mui/material";
 import type { TForm } from "../../types/TForm";
 import FormCard from "./FormCard";
 
@@ -9,12 +9,22 @@ type MyFormsFormCardProps = {
 const MyFormsFormCard = ({ form }: MyFormsFormCardProps) => {
   return (
     <>
-      <FormCard form={form} width={400}>
-        <Stack bgcolor={"white"} gap={"20px"} p={"20px"} boxShadow={3} borderRadius={2}>
+      <FormCard
+        form={form}
+        width={"100%"}
+        height={"100%"}
+        borderRadius={2}
+        overflow={"hidden"}
+        boxShadow={3}
+        maxWidth={400}
+      >
+        <Stack bgcolor={"white"} gap={"20px"} p={"20px"}>
           <Stack direction={"row"} justifyContent={"space-between"}>
             <Stack direction={"row"} alignItems={"center"} gap={"9px"}>
-              <FormCard.Image width={32} height={32} />
-              <FormCard.Title variant="h3" fontSize={20} fontWeight={600} />
+              <Box>
+                <FormCard.Image width={32} height={32} />
+              </Box>
+              <FormCard.Title variant="h3" fontSize={20} fontWeight={600} numOfRows={1} />
             </Stack>
             <FormCard.IsPublishedChip />
             <Stack direction={"row"} alignItems={"center"} gap={"9px"}>
@@ -24,7 +34,7 @@ const MyFormsFormCard = ({ form }: MyFormsFormCardProps) => {
               </Stack>
             </Stack>
           </Stack>
-          <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
+          <FormCard.Description fontSize={15} fontWeight={500} color="#727272" numOfRows={2} />
           <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
             <Stack direction={"row"} gap={"5px"}>
               <FormCard.Categories

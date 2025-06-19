@@ -10,10 +10,11 @@ import {
   type StackProps,
   type TypographyProps,
 } from "@mui/material";
-import { type PropsWithChildren, type ReactNode } from "react";
+import { type ComponentProps, type PropsWithChildren, type ReactNode } from "react";
 import { FormCardContext, useFormCardContext } from "../../context/FormCardContext";
 import type { TForm } from "../../types/TForm";
 import { Circle } from "@mui/icons-material";
+import EllipsisText from "../EllipsisText/EllipsisText";
 
 type FormCardProps = {
   form: TForm;
@@ -33,14 +34,14 @@ const FormCard = ({
 
 export default FormCard;
 
-FormCard.Title = ({ ...props }: Omit<TypographyProps, "children">) => {
+FormCard.Title = ({ ...props }: Omit<ComponentProps<typeof EllipsisText>, "text">) => {
   const { title } = useFormCardContext();
-  return <Typography {...props}>{title}</Typography>;
+  return <EllipsisText {...props} text={title} />;
 };
 
-FormCard.Description = ({ ...props }: Omit<TypographyProps, "children">) => {
+FormCard.Description = ({ ...props }: Omit<ComponentProps<typeof EllipsisText>, "text">) => {
   const { description } = useFormCardContext();
-  return <Typography {...props}>{description}</Typography>;
+  return <EllipsisText {...props} text={description} />;
 };
 
 FormCard.Image = ({ ...props }: Omit<BoxProps, "children">) => {

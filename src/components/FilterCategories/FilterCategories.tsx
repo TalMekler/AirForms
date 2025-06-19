@@ -17,7 +17,6 @@ const FilterCategories = ({ filterCategories }: FilterCategoriesProps) => {
           borderRadius={2}
           alignItems={"center"}
           textAlign={"center"}
-          gap={1}
           sx={{
             cursor: "pointer",
             "&:hover": {
@@ -29,8 +28,8 @@ const FilterCategories = ({ filterCategories }: FilterCategoriesProps) => {
             },
           }}
         >
-          <filterCategory.muiIcon sx={{ fontSize: 32 }} />
-          <Typography variant="caption" fontSize={24}>
+          <filterCategory.muiIcon sx={{ fontSize: 24 }} />
+          <Typography variant="caption" fontSize={18}>
             {filterCategory.title}
           </Typography>
         </Stack>
