@@ -1,7 +1,7 @@
 import { Bookmark, IosShare } from "@mui/icons-material";
 import { Chip, Stack, Typography } from "@mui/material";
 import type { TForm } from "../../types/TForm";
-import FormCard from "../FormCard/FormCard";
+import FormCard from "./FormCard";
 
 type MyFormsFormCardProps = {
   form: TForm;
