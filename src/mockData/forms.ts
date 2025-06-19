@@ -6,7 +6,7 @@ export const form: TForm = {
   description: "לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר ",
   createdAt: "2023-10-01T12:00:00Z",
   updatedAt: "2023-10-01T12:00:00Z",
-  isPublished: true,
+  isPublished: false,
   author: {
     id: "user-1",
     firstName: "טל",
