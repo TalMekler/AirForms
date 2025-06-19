@@ -3,7 +3,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import { Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { form } from "../../mockData/forms";
-import FormCard from "../FormCard";
+import FormCard from '../FormCard/FormCard';
 
 const MyFormCard = () => {
     return (

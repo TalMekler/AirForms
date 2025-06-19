@@ -17,6 +17,7 @@
     "@mui/stylis-plugin-rtl": "^7.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
     "stylis": "^4.3.6"
   },
   "devDependencies": {
