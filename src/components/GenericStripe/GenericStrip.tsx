@@ -15,7 +15,8 @@ const GenericStrip = <T,>({
   const itemsToRender = maxItemsToShow ? items.slice(0, maxItemsToShow) : items;
 
   return (
-    <Box padding={gridProps?.padding || 0} mb={4}>
+    <Box mb={4} px={6}>
+      {/* כותרת הסטריפ */}
       <Box display="flex" justifyContent="center" mb={2}>
         <Typography variant="h5" fontWeight="bold">
           {title}
@@ -27,19 +28,19 @@ const GenericStrip = <T,>({
           {emptyMessage}
         </Typography>
       ) : (
-        <>
-          <Grid container justifyContent="center" {...gridProps}>
-            {itemsToRender.map((item, index) => (
-              <Grid item key={index} {...itemGridProps}>
-                {renderItem(item)}
-              </Grid>
-            ))}
-          </Grid>
-          <Box display="flex" justifyContent="flex-end" mt={2}>
-            {actionButton ??
-              (actionButtonText && (
+        <Grid container spacing={2} {...gridProps}>
+          {itemsToRender.map((item, index) => (
+            <Grid item key={index} {...itemGridProps}>
+              {renderItem(item)}
+            </Grid>
+          ))}
+
+          {(actionButton || actionButtonText) && (
+            <Grid item {...itemGridProps}>
+              {actionButton ?? (
                 <Typography
-                  variant="body2"
+                                      variant="body2"
+                                      justifyContent={"flex-end"}
                   sx={{
                     cursor: "pointer",
                     color: "primary.main",
@@ -49,12 +50,13 @@ const GenericStrip = <T,>({
                 >
                   {actionButtonText}
                   <Box component="span" ml={1} fontSize="small">
-                    {"<"}
+                    {">"}
                   </Box>
                 </Typography>
-              ))}
-          </Box>
-        </>
+              )}
+            </Grid>
+          )}
+        </Grid>
       )}
     </Box>
   );
