@@ -1,48 +1,41 @@
-import { Box, Typography } from "@mui/material";
-import { categories } from "./Categories";
+import { Stack, Typography } from "@mui/material";
+import type { TFilterCategory } from "../../types/TFilterCategory";
 
-const FilterCategories = () => {
+type FilterCategoriesProps = {
+  filterCategories: TFilterCategory[];
+};
+const FilterCategories = ({ filterCategories }: FilterCategoriesProps) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        gap: 1,
-        width: "100%",
-        maxWidth: "100%",
-        flexWrap: "nowrap",
-        overflow: "hidden",
-        alignItems: "center",
-        py: 1,
-      }}
-    >
-      {categories.map((category, index) => (
-        <Box
-          key={index}
+    <Stack direction={"row"} alignItems={"center"} gap={"20px"} flexWrap={"nowrap"}>
+      {filterCategories.map((filterCategory, index) => (
+        <Stack
+          key={`filter_category_${index}`}
+          bgcolor={"#EDF5FE"}
+          px={3}
+          py={1}
+          flex={1}
+          borderRadius={2}
+          alignItems={"center"}
+          textAlign={"center"}
+          gap={1}
           sx={{
-            px: 5,
-            width: "100%",
-            minWidth: 0,
-            height: 60,
-            backgroundColor: "#eaf4ff",
-            borderRadius: 2,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            overflow: "hidden",
-            textAlign: "center",
             cursor: "pointer",
             "&:hover": {
-              backgroundColor: "#d2ebff",
+              backgroundColor: "#0E6BA8",
+              transition: "300ms ease-in-out",
+              "& > *": {
+                color: "white",
+              },
             },
           }}
         >
-          <Box sx={{ mb: 0.2 }}>{category.icon}</Box>
-          <Typography variant="caption">{category.title}</Typography>
-        </Box>
+          <filterCategory.muiIcon sx={{ fontSize: 32 }} />
+          <Typography variant="caption" fontSize={24}>
+            {filterCategory.title}
+          </Typography>
+        </Stack>
       ))}
-    </Box>
+    </Stack>
   );
 };
 
