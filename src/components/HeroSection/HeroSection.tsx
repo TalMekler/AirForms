@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
             </Typography>
           </Box>
 
-          <Typography variant="body1" color="text.secondary" mb={4} sx={{ maxWidth: 400 }}>
+          <Typography variant="body1" color="text.secondary" mb={4} sx={{ maxWidth: 570 }}>
             הממשק הדיגיטלי החדש של הלל האוויר הוא קפיצת מדרגה בעולם הניהול והבקשות. כל הטפסים במקום אחד, עם חווית שימוש
             פשוטה, נוחה וידידותית מאי פעם. פחות בירוקרטיה, יותר יעילות – הטכנולוגיה שמעצימה אתכם!
           </Typography>
