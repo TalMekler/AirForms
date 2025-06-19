@@ -25,21 +25,23 @@ const MyFormCard = () => {
                                         display="flex"
                                         alignItems="center"
                                         sx={{
-                                            backgroundColor: "#ecf9ec",
-                                            color: "green",
+                                            backgroundColor: form.isPublished ? "FOFEED" : "FEEDED",
+                                            color: form.isPublished ? "green" : "red",
                                             px: 2,
                                             py: 0.5,
                                             borderRadius: "20px",
                                         }}
                                     >
-                                        {form.isPublished === true ?
+                                        {form.isPublished ?
                                             <Typography fontWeight="bold" fontSize="14px">
                                                 פעיל
                                             </Typography> :
-                                            <Typography fontWeight="bold" fontSize="14px">
+                                            <Typography fontWeight="bold" fontSize="14px" >
                                                 לא פעיל
                                             </Typography>}
-                                        <CircleIcon sx={{ fontSize: 12, ml: 1, color: "green" }} />
+                                        {form.isPublished ?
+                                            <CircleIcon sx={{ fontSize: 12, ml: 1, color: "green" }} /> :
+                                            <CircleIcon sx={{ fontSize: 12, ml: 1, color: "red" }} />}
                                     </Box>
                                 </Box>
                             </Stack>
@@ -52,8 +54,8 @@ const MyFormCard = () => {
                                         <Stack direction={"row"} gap={1}>
                                             <FormCard.Categories
                                                 renderItem={(st: string) => (
-                                                    <Box bgcolor={"white"} py={"3px"} px={"5px"} borderRadius={1} borderColor={"#001c55"} border={1}>
-                                                        <Typography fontSize={11} color="#001c55">
+                                                    <Box bgcolor={"white"} py={"3px"} px={"5px"} borderRadius={1}>
+                                                        <Typography fontSize={11} color="#001c55" sx={{ backgroundColor: "#EDF5FE" }} padding={1} borderRadius={2}>
                                                             {st}
                                                         </Typography>
                                                     </Box>
