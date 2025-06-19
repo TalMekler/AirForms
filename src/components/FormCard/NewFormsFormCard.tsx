@@ -43,14 +43,14 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
         </Stack>
       </Stack>
       <Stack p={2} gap={2} flex={1}>
-        <Stack direction={"row"} justifyContent={"space-between"}>
-          <FormCard.Title fontSize={20} fontWeight={600} />
+        <Stack direction={"row"} gap={0.5} justifyContent={"space-between"}>
+          <FormCard.Title fontSize={20} fontWeight={600} numOfRows={1} />
           <Stack direction={"row"} alignItems={"center"} gap={"5px"}>
             <Bookmark sx={{ color: "#a6e1fa", cursor: "pointer" }} />
             <IosShare sx={{ cursor: "pointer" }} />
           </Stack>
         </Stack>
-        <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
+        <FormCard.Description fontSize={15} fontWeight={500} color="#727272" numOfRows={3} />
         <Stack mt={"auto"} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <UserCard user={form.author}>
             <Stack direction={"row"} alignItems={"center"} gap={1}>
