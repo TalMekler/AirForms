@@ -1,15 +1,25 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Bookmark, IosShare } from "@mui/icons-material";
+import { Chip, Stack, Typography } from "@mui/material";
+import type { TForm } from "../../types/TForm";
 import { dateFormat, isoDateToDate } from "../../utils/datetime";
 import UserCard from "../UserCard/UserCard";
 import FormCard from "./FormCard";
-import type { TForm } from "../../types/TForm";
 
 type NewFormsFormCardProps = {
   form: TForm;
 };
 const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
   return (
-    <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={3}>
+    <FormCard
+      form={form}
+      width={"100%"}
+      height={"100%"}
+      borderRadius={2}
+      overflow={"hidden"}
+      boxShadow={3}
+      maxWidth={400}
+      bgcolor={"white"}
+    >
       <Stack
         justifyContent={"end"}
         height={160}
@@ -21,12 +31,9 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
         <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <Stack direction={"row"} gap={1}>
             <FormCard.Categories
+              maxItemsToRender={4}
               renderItem={(st: string) => (
-                <Box bgcolor={"white"} py={"3px"} px={"5px"} borderRadius={1}>
-                  <Typography fontSize={11} color="#001c55">
-                    {st}
-                  </Typography>
-                </Box>
+                <Chip label={st} sx={{ fontSize: 12, color: "#100F18", bgcolor: "#edf5fe" }} />
               )}
             />
           </Stack>
@@ -36,8 +43,14 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
         </Stack>
       </Stack>
       <Stack p={2} gap={2} flex={1}>
-        <FormCard.Title fontSize={20} fontWeight={600} />
-        <FormCard.Description fontSize={15} fontWeight={500} color="#727272" />
+        <Stack direction={"row"} gap={0.5} justifyContent={"space-between"}>
+          <FormCard.Title fontSize={20} fontWeight={600} numOfRows={1} />
+          <Stack direction={"row"} alignItems={"center"} gap={"5px"}>
+            <Bookmark sx={{ color: "#a6e1fa", cursor: "pointer" }} />
+            <IosShare sx={{ cursor: "pointer" }} />
+          </Stack>
+        </Stack>
+        <FormCard.Description fontSize={15} fontWeight={500} color="#727272" numOfRows={3} />
         <Stack mt={"auto"} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <UserCard user={form.author}>
             <Stack direction={"row"} alignItems={"center"} gap={1}>
