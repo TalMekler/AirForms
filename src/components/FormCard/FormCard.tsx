@@ -1,8 +1,19 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Avatar, Box, Chip, Stack, Typography, type BoxProps, type StackProps, type TypographyProps } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Chip,
+  Stack,
+  Typography,
+  type BoxProps,
+  type ChipProps,
+  type StackProps,
+  type TypographyProps,
+} from "@mui/material";
 import { type PropsWithChildren, type ReactNode } from "react";
 import { FormCardContext, useFormCardContext } from "../../context/FormCardContext";
 import type { TForm } from "../../types/TForm";
+import { Circle } from "@mui/icons-material";
 
 type FormCardProps = {
   form: TForm;
@@ -41,13 +52,21 @@ FormCard.Image = ({ ...props }: Omit<BoxProps, "children">) => {
   );
 };
 
-FormCard.Categories = ({ renderItem }: { renderItem?: (category: string) => ReactNode }) => {
+type FormCardCategoriesProps = {
+  renderItem?: (category: string) => ReactNode;
+  maxItemsToRender?: number;
+};
+FormCard.Categories = ({ renderItem, maxItemsToRender }: FormCardCategoriesProps) => {
+  if (maxItemsToRender && maxItemsToRender < 1) throw new Error("maxItemsToRender must be at least 1");
+
   const { categories } = useFormCardContext();
-  return categories.length > 0 ? (
+  const limitedCategories = maxItemsToRender ? categories.slice(0, maxItemsToRender) : categories;
+
+  return limitedCategories.length > 0 ? (
     renderItem ? (
-      categories.map((category) => renderItem(category))
+      limitedCategories.map((category) => renderItem(category))
     ) : (
-      categories.map((category) => <Chip label={category} />)
+      limitedCategories.map((category) => <Chip label={category} />)
     )
   ) : (
     <></>
@@ -61,5 +80,28 @@ FormCard.Tags = ({
   const { tags } = useFormCardContext();
   return (
     <Box {...props}>{renderItem ? tags.map((tag) => renderItem(tag)) : tags.map((tag) => <Chip label={tag} />)}</Box>
+  );
+};
+
+FormCard.IsPublishedChip = ({ ...chipProps }: Omit<ChipProps, "label">) => {
+  const { isPublished } = useFormCardContext();
+  const { sx, ...otherChipProps } = chipProps;
+  return (
+    <Chip
+      {...otherChipProps}
+      label={
+        <Stack direction={"row"} alignItems={"center"} gap={"5px"}>
+          <Circle sx={{ width: 9, height: 9 }} />
+          <Typography variant="caption" fontSize={15}>
+            {isPublished ? "פעיל" : "לא פעיל"}
+          </Typography>
+        </Stack>
+      }
+      sx={{
+        ...sx,
+        bgcolor: isPublished ? "#f0feed" : "#feeded",
+        color: isPublished ? "#259800" : "#DC0004",
+      }}
+    />
   );
 };
