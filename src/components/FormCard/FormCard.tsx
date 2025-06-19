@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Box, Chip, Typography, type BoxProps, type TypographyProps } from "@mui/material";
 import { type PropsWithChildren, type ReactNode } from "react";
-import { FormCardContext, useFormCardContext } from "../context/FormCardContext";
-import type { TForm } from "../types/TForm";
+import { FormCardContext, useFormCardContext } from "../../context/FormCardContext";
+import type { TForm } from "../../types/TForm";
 
 type FormCardProps = {
   form: TForm;
