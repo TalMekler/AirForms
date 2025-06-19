@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Box, Chip, Typography, type BoxProps, type TypographyProps } from "@mui/material";
+import { Box, Chip, Stack, Typography, type BoxProps, type StackProps, type TypographyProps } from "@mui/material";
 import { type PropsWithChildren, type ReactNode } from "react";
 import { FormCardContext, useFormCardContext } from "../../context/FormCardContext";
 import type { TForm } from "../../types/TForm";
@@ -8,8 +8,16 @@ type FormCardProps = {
   form: TForm;
 };
 
-const FormCard = ({ children, form }: PropsWithChildren & FormCardProps) => {
-  return <FormCardContext.Provider value={form}>{children}</FormCardContext.Provider>;
+const FormCard = ({
+  children,
+  form,
+  ...stackProps
+}: PropsWithChildren<FormCardProps> & Omit<StackProps, "children">) => {
+  return (
+    <FormCardContext.Provider value={form}>
+      <Stack {...stackProps}>{children}</Stack>
+    </FormCardContext.Provider>
+  );
 };
 
 export default FormCard;
