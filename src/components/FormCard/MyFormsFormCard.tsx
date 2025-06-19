@@ -9,8 +9,16 @@ type MyFormsFormCardProps = {
 const MyFormsFormCard = ({ form }: MyFormsFormCardProps) => {
   return (
     <>
-      <FormCard form={form} width={400}>
-        <Stack bgcolor={"white"} gap={"20px"} p={"20px"} boxShadow={3} borderRadius={2}>
+      <FormCard
+        form={form}
+        width={"100%"}
+        height={"100%"}
+        borderRadius={2}
+        overflow={"hidden"}
+        boxShadow={3}
+        maxWidth={400}
+      >
+        <Stack bgcolor={"white"} gap={"20px"} p={"20px"}>
           <Stack direction={"row"} justifyContent={"space-between"}>
             <Stack direction={"row"} alignItems={"center"} gap={"9px"}>
               <FormCard.Image width={32} height={32} />
