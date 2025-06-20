@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { type PropsWithChildren } from "react";
-import type { TUser } from "../../types/TUser";
-import { UserCardContext, useUserCardContext } from "../../context/UserCardContext";
 import { Avatar, Typography, type AvatarProps, type TypographyProps } from "@mui/material";
+import { type PropsWithChildren } from "react";
+import { UserCardContext, useUserCardContext } from "../../context/UserCardContext";
+import type { TUser } from "../../types/TUser";
 
 type UserCardProps = {
   user: TUser;
