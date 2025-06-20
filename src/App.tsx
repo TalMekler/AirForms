@@ -25,9 +25,7 @@ function App() {
         <GenericStrip<TForm>
           title="טפסים חדשים"
           items={myForms}
-          gridProps={{ spacing: 2 }}
-          itemGridProps={{ xs: 12, sm: 6, md: 3, lg: 3 }}
-          maxItemsToShow={8}
+          maxItemsToShow={10}
           emptyMessage="אין טפסים להצגה"
           actionButtonText="לכל הטפסים"
           renderItem={(form) => <NewFormsFormCard form={form} />}

@@ -8,6 +8,7 @@ import FormCard from "./FormCard";
 type NewFormsFormCardProps = {
   form: TForm;
 };
+
 const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
   return (
     <FormCard
@@ -18,47 +19,64 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
       overflow={"hidden"}
       boxShadow={3}
       maxWidth={400}
-      bgcolor={"white"}
+      bgcolor={"#1A1A1A"}
     >
       <Stack
-        justifyContent={"end"}
         height={160}
         p={"21px"}
         sx={{
-          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${form.image})`,
+          backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url(${form.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
         <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <Stack direction={"row"} gap={1}>
             <FormCard.Categories
-              maxItemsToRender={4}
+              maxItemsToRender={3}
               renderItem={(st: string) => (
-                <Chip label={st} sx={{ fontSize: 12, color: "#100F18", bgcolor: "#edf5fe" }} />
+                <Chip 
+                  label={st} 
+                  sx={{ 
+                    fontSize: 12, 
+                    color: "white",
+                    bgcolor: "rgba(255, 255, 255, 0.2)",
+                    borderRadius: '4px',
+                    height: '24px'
+                  }} 
+                />
               )}
             />
           </Stack>
-          <Typography fontSize={15} fontWeight={300} color="white">
+          <Typography fontSize={14} fontWeight={300} color="white">
             {dateFormat(isoDateToDate(form.createdAt))}
           </Typography>
         </Stack>
       </Stack>
-      <Stack p={2} gap={2} flex={1}>
+      <Stack p={"21px"} gap={2}>
         <Stack direction={"row"} gap={0.5} justifyContent={"space-between"}>
-          <FormCard.Title fontSize={20} fontWeight={600} numOfRows={1} />
+          <FormCard.Title fontSize={20} fontWeight={600} numOfRows={1} sx={{ color: 'white' }} />
           <Stack direction={"row"} alignItems={"center"} gap={"5px"}>
-            <Bookmark sx={{ color: "#a6e1fa", cursor: "pointer" }} />
-            <IosShare sx={{ cursor: "pointer" }} />
+            <Bookmark sx={{ color: "white", cursor: "pointer", opacity: 0.8 }} />
+            <IosShare sx={{ color: "white", cursor: "pointer", opacity: 0.8 }} />
           </Stack>
         </Stack>
-        <FormCard.Description fontSize={15} fontWeight={500} color="#727272" numOfRows={3} />
+        <FormCard.Description 
+          fontSize={15} 
+          fontWeight={400} 
+          color="rgba(255, 255, 255, 0.7)" 
+          numOfRows={2} 
+        />
         <Stack mt={"auto"} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <UserCard user={form.author}>
             <Stack direction={"row"} alignItems={"center"} gap={1}>
               <UserCard.Avatar sx={{ width: 24, height: 24 }} />
-              <UserCard.FullName fontSize={15} color="#727272" />
+              <UserCard.FullName fontSize={14} sx={{ color: 'rgba(255, 255, 255, 0.7)' }} />
             </Stack>
           </UserCard>
-          <Typography color="#727272">זמן מילוי כ-{form.timeToFill}</Typography>
+          <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: 14 }}>
+            זמן מילוי כ-{form.timeToFill}
+          </Typography>
         </Stack>
       </Stack>
     </FormCard>

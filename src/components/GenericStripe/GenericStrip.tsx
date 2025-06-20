@@ -5,8 +5,17 @@ const GenericStrip = <T,>({
   title,
   items,
   renderItem,
-  gridProps,
-  itemGridProps,
+  gridProps = {
+    spacing: 3,
+    container: true,
+    justifyContent: "center",
+  },
+  itemGridProps = {
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3
+  },
   maxItemsToShow,
   emptyMessage = "אין פריטים להצגה",
   actionButton,
@@ -15,10 +24,27 @@ const GenericStrip = <T,>({
   const itemsToRender = maxItemsToShow ? items.slice(0, maxItemsToShow) : items;
 
   return (
-    <Box mb={4} px={6}>
+    <Box 
+      sx={{
+        width: '100%',
+        padding: { xs: 2, sm: 3, md: 4 },
+        margin: '0 auto'
+      }}
+    >
       {/* כותרת הסטריפ */}
-      <Box display="flex" justifyContent="center" mb={2}>
-        <Typography variant="h5" fontWeight="bold">
+      <Box 
+        display="flex" 
+        justifyContent="center" 
+        mb={3}
+        sx={{
+          "& .MuiTypography-root": {
+            fontSize: { xs: '1.5rem', sm: '1.75rem' },
+            fontWeight: 600,
+            textAlign: 'center'
+          }
+        }}
+      >
+        <Typography variant="h5">
           {title}
         </Typography>
       </Box>
@@ -28,24 +54,50 @@ const GenericStrip = <T,>({
           {emptyMessage}
         </Typography>
       ) : (
-        <Grid container spacing={2} {...gridProps}>
+        <Grid 
+          container 
+          {...gridProps} 
+          sx={{ 
+            width: '100%',
+            margin: '0 auto',
+            ...gridProps?.sx 
+          }}
+        >
           {itemsToRender.map((item, index) => (
-            <Grid item key={index} {...itemGridProps}>
+            <Grid 
+              item 
+              key={index} 
+              {...itemGridProps}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                ...itemGridProps?.sx
+              }}
+            >
               {renderItem(item)}
             </Grid>
           ))}
 
           {(actionButton || actionButtonText) && (
-            <Grid item {...itemGridProps}>
+            <Grid 
+              item 
+              {...itemGridProps}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                ...itemGridProps?.sx
+              }}
+            >
               {actionButton ?? (
                 <Typography
-                                      variant="body2"
-                                      justifyContent={"flex-end"}
+                  variant="body2"
                   sx={{
                     cursor: "pointer",
                     color: "primary.main",
                     display: "inline-flex",
                     alignItems: "center",
+                    fontSize: { xs: '0.875rem', sm: '1rem' }
                   }}
                 >
                   {actionButtonText}
