@@ -1,9 +1,8 @@
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import React from "react";
-import HeroSectionImage from "../../assets/heroSectionImage.svg";
 import { useNavigate } from "react-router-dom";
+import HeroSectionImage from "../../assets/heroSectionImage.svg";
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
   const navigate = useNavigate();
   return (
     <Grid container spacing={4}>
