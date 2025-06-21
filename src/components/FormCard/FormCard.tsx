@@ -48,8 +48,20 @@ FormCard.Categories = ({ renderItem, maxItemsToRender }: FormCardCategoriesProps
 
   const { categories } = useFormCardContext();
   const limitedCategories = maxItemsToRender ? categories.slice(0, maxItemsToRender) : categories;
+  const diff = categories.length - (maxItemsToRender ?? categories.length);
 
-  return limitedCategories.length > 0 ? renderItem ? limitedCategories.map((category) => renderItem(category)) : limitedCategories.map((category) => <Chip label={category} />) : <></>;
+  return limitedCategories.length > 0 ? (
+    renderItem ? (
+      <>
+        {limitedCategories.map((category) => renderItem(category))}
+        {diff > 0 && renderItem(`+${diff}`)}
+      </>
+    ) : (
+      limitedCategories.map((category) => <Chip label={category} />)
+    )
+  ) : (
+    <></>
+  );
 };
 
 FormCard.Tags = ({ renderItem, ...props }: Omit<BoxProps, "children"> & { renderItem?: (tag: string) => ReactNode }) => {
