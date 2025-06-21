@@ -1,4 +1,5 @@
 import type { TId } from "./TId";
+import type { TIsoDate } from "./TIsoDate";
 
 export type TUser = {
   id: TId;
@@ -6,6 +7,6 @@ export type TUser = {
   lastName: string;
   email: string;
   image: string | null; // URL to the user's image or null if not available
-  createdAt: string; // date in ISO format
+  createdAt: TIsoDate;
   phoneNumber: string | null; // phone number or null if not available
 };
