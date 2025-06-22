@@ -1,30 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import {
-  Avatar,
-  Box,
-  Chip,
-  Stack,
-  Typography,
-  type BoxProps,
-  type ChipProps,
-  type StackProps,
-  type TypographyProps,
-} from "@mui/material";
+import { Circle } from "@mui/icons-material";
+import { Avatar, Box, Chip, Stack, Typography, type BoxProps, type ChipProps, type StackProps } from "@mui/material";
 import { type ComponentProps, type PropsWithChildren, type ReactNode } from "react";
 import { FormCardContext, useFormCardContext } from "../../context/FormCardContext";
 import type { TForm } from "../../types/TForm";
-import { Circle } from "@mui/icons-material";
 import EllipsisText from "../EllipsisText/EllipsisText";
 
 type FormCardProps = {
   form: TForm;
 };
 
-const FormCard = ({
-  children,
-  form,
-  ...stackProps
-}: PropsWithChildren<FormCardProps> & Omit<StackProps, "children">) => {
+const FormCard = ({ children, form, ...stackProps }: PropsWithChildren<FormCardProps> & Omit<StackProps, "children">) => {
   return (
     <FormCardContext.Provider value={form}>
       <Stack {...stackProps}>{children}</Stack>
@@ -62,10 +48,14 @@ FormCard.Categories = ({ renderItem, maxItemsToRender }: FormCardCategoriesProps
 
   const { categories } = useFormCardContext();
   const limitedCategories = maxItemsToRender ? categories.slice(0, maxItemsToRender) : categories;
+  const diff = categories.length - (maxItemsToRender ?? categories.length);
 
   return limitedCategories.length > 0 ? (
     renderItem ? (
-      limitedCategories.map((category) => renderItem(category))
+      <>
+        {limitedCategories.map((category) => renderItem(category))}
+        {diff > 0 && renderItem(`+${diff}`)}
+      </>
     ) : (
       limitedCategories.map((category) => <Chip label={category} />)
     )
@@ -74,14 +64,9 @@ FormCard.Categories = ({ renderItem, maxItemsToRender }: FormCardCategoriesProps
   );
 };
 
-FormCard.Tags = ({
-  renderItem,
-  ...props
-}: Omit<BoxProps, "children"> & { renderItem?: (tag: string) => ReactNode }) => {
+FormCard.Tags = ({ renderItem, ...props }: Omit<BoxProps, "children"> & { renderItem?: (tag: string) => ReactNode }) => {
   const { tags } = useFormCardContext();
-  return (
-    <Box {...props}>{renderItem ? tags.map((tag) => renderItem(tag)) : tags.map((tag) => <Chip label={tag} />)}</Box>
-  );
+  return <Box {...props}>{renderItem ? tags.map((tag) => renderItem(tag)) : tags.map((tag) => <Chip label={tag} />)}</Box>;
 };
 
 FormCard.IsPublishedChip = ({ ...chipProps }: Omit<ChipProps, "label">) => {

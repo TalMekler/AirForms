@@ -131,8 +131,8 @@ export const objectForm: TForm[] = [
         image: "https://picsum.photos/200",
         categories: ["HR", "סקירה"],
         tags: ["סקירה", "ביצועים", "הערכה"],
-        expirationDate: "0876544567",
-        timeToFill: "5 דק׳", // estimated time to fill the form
+        expirationDate: "2023-12-19T00:00:00Z",
+        timeToFill: "5 דק׳",
     }
 ];
 
@@ -140,6 +140,8 @@ export const objectForm: TForm[] = [
 export const kitForm: TKit = {
     title: "ערכת טפסים לדוגמא",
     description: "ערכת טפסים לדוגמא המכילה מספר טפסים שונים לשימוש.",
+    categories: ["דוגמאות", "טפסים", "ערכת טפסים"],
     forms: objectForm, // Array of forms included in the kit
-    author: objectForm[0].author
+    author: objectForm[0].author,
+    createdAt: "2023-10-01T12:00:00Z",
 }

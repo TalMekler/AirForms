@@ -10,16 +10,7 @@ type NewFormsFormCardProps = {
 };
 const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
   return (
-    <FormCard
-      form={form}
-      width={"100%"}
-      height={"100%"}
-      borderRadius={2}
-      overflow={"hidden"}
-      boxShadow={3}
-      maxWidth={400}
-      bgcolor={"white"}
-    >
+    <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={3} maxWidth={400} bgcolor={"white"}>
       <Stack
         justifyContent={"end"}
         height={160}
@@ -30,12 +21,7 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
       >
         <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <Stack direction={"row"} gap={1}>
-            <FormCard.Categories
-              maxItemsToRender={4}
-              renderItem={(st: string) => (
-                <Chip label={st} sx={{ fontSize: 12, color: "#100F18", bgcolor: "#edf5fe" }} />
-              )}
-            />
+            <FormCard.Categories maxItemsToRender={4} renderItem={(st: string) => <Chip label={st} sx={{ fontSize: 12, color: "#100F18", bgcolor: "#edf5fe" }} />} />
           </Stack>
           <Typography fontSize={15} fontWeight={300} color="white">
             {dateFormat(isoDateToDate(form.createdAt))}

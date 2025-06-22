@@ -3,21 +3,16 @@ import { Box, IconButton, InputAdornment, Stack, TextField } from "@mui/material
 import FilterCategories from "../../FilterCategories/FilterCategories";
 import { filterCategories } from "../../FilterCategories/utils/filterCategories";
 import HeroSection from "../../HeroSection/HeroSection";
+import { kitForm } from "../../../mockData/objectForms";
+import MyFormsFormCard from "../../FormCard/MyFormsFormCard";
+import { form } from "../../../mockData/forms";
+import MyFolder from "../../KitCard/MyFolder";
 
-type HomePageProps = {};
-const HomePage = ({ }: HomePageProps) => {
+const HomePage = () => {
   return (
     <Box>
       <HeroSection />
-      <Stack
-        mt={"40px"}
-        mb={"60px"}
-        width={"fit-content"}
-        mx={"auto"}
-        direction={"row"}
-        gap={"20px"}
-        alignItems={"center"}
-      >
+      <Stack mt={"2.5rem"} mb={"3.75rem"} width={"fit-content"} mx={"auto"} direction={"row"} gap={"1.25rem"} alignItems={"center"}>
         <TextField
           placeholder="חיפוש"
           InputProps={{
@@ -27,7 +22,7 @@ const HomePage = ({ }: HomePageProps) => {
               </InputAdornment>
             ),
           }}
-          sx={{ width: "540px", px: 2, py: 1 }}
+          sx={{ width: 540, px: 2, py: 1 }}
         />
         <Box>
           <IconButton
@@ -37,7 +32,7 @@ const HomePage = ({ }: HomePageProps) => {
               borderRadius: 2,
               bgcolor: "#EDF5FE",
               "&:hover": {
-                bgcolor: "#EDF5FE",
+                bgcolor: "#D0E4FB",
               },
             }}
           >
@@ -46,6 +41,8 @@ const HomePage = ({ }: HomePageProps) => {
         </Box>
       </Stack>
       <FilterCategories filterCategories={filterCategories} />
+      <MyFormsFormCard form={form} />
+      <MyFolder kit={kitForm} />
     </Box>
   );
 };

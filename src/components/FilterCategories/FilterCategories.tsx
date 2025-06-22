@@ -6,36 +6,37 @@ type FilterCategoriesProps = {
 };
 const FilterCategories = ({ filterCategories }: FilterCategoriesProps) => {
   return (
-    <Stack direction={"row"} alignItems={"center"} gap={"20px"} flexWrap={"nowrap"}>
-      {filterCategories.map((filterCategory, index) => (
-        <Stack
-          key={`filter_category_${index}`}
-          bgcolor={"#EDF5FE"}
-          px={3}
-          py={1}
-          flex={1}
-          borderRadius={2}
-          alignItems={"center"}
-          textAlign={"center"}
-          gap={1}
-          sx={{
-            cursor: "pointer",
-            "&:hover": {
-              backgroundColor: "#0E6BA8",
-              transition: "300ms ease-in-out",
-              "& > *": {
-                color: "white",
+    <>
+      <Stack direction={"row"} alignItems={"center"} gap={"1.25rem"} flexWrap={"wrap"}>
+        {filterCategories.map((filterCategory, index) => (
+          <Stack
+            key={`filter_category_${index}`}
+            bgcolor={"#EDF5FE"}
+            px={"1.875rem"}
+            py={"0.625rem"}
+            flex={1}
+            borderRadius={2}
+            alignItems={"center"}
+            textAlign={"center"}
+            sx={{
+              cursor: "pointer",
+              "&:hover": {
+                backgroundColor: "#0E6BA8",
+                transition: "300ms ease-in-out",
+                "& > *": {
+                  color: "white",
+                },
               },
-            },
-          }}
-        >
-          <filterCategory.muiIcon sx={{ fontSize: 32 }} />
-          <Typography variant="caption" fontSize={24}>
-            {filterCategory.title}
-          </Typography>
-        </Stack>
-      ))}
-    </Stack>
+            }}
+          >
+            <filterCategory.muiIcon sx={{ fontSize: "1.5rem" }} />
+            <Typography variant="caption" fontSize={"1.125rem"}>
+              {filterCategory.title}
+            </Typography>
+          </Stack>
+        ))}
+      </Stack>
+    </>
   );
 };
 
