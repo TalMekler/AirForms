@@ -11,16 +11,7 @@ type NewFormsFormCardProps = {
 
 const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
   return (
-    <FormCard
-      form={form}
-      width={"100%"}
-      height={"100%"}
-      borderRadius={2}
-      overflow={"hidden"}
-      boxShadow={3}
-      maxWidth={400}
-      bgcolor={"#1A1A1A"}
-    >
+    <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={3} maxWidth={400} bgcolor={"white"}>
       <Stack
         height={160}
         p={"21px"}
@@ -32,21 +23,7 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
       >
         <Stack direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <Stack direction={"row"} gap={1}>
-            <FormCard.Categories
-              maxItemsToRender={3}
-              renderItem={(st: string) => (
-                <Chip 
-                  label={st} 
-                  sx={{ 
-                    fontSize: 12, 
-                    color: "white",
-                    bgcolor: "rgba(255, 255, 255, 0.2)",
-                    borderRadius: '4px',
-                    height: '24px'
-                  }} 
-                />
-              )}
-            />
+            <FormCard.Categories maxItemsToRender={4} renderItem={(st: string) => <Chip label={st} sx={{ fontSize: 12, color: "#100F18", bgcolor: "#edf5fe" }} />} />
           </Stack>
           <Typography fontSize={14} fontWeight={300} color="white">
             {dateFormat(isoDateToDate(form.createdAt))}
@@ -61,11 +38,11 @@ const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
             <IosShare sx={{ color: "white", cursor: "pointer", opacity: 0.8 }} />
           </Stack>
         </Stack>
-        <FormCard.Description 
-          fontSize={15} 
-          fontWeight={400} 
-          color="rgba(255, 255, 255, 0.7)" 
-          numOfRows={2} 
+        <FormCard.Description
+          fontSize={15}
+          fontWeight={400}
+          color="rgba(255, 255, 255, 0.7)"
+          numOfRows={2}
         />
         <Stack mt={"auto"} direction={"row"} alignItems={"center"} justifyContent={"space-between"}>
           <UserCard user={form.author}>

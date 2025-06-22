@@ -1,9 +1,7 @@
-export const isoDateToDate = (isoDate: string): Date => {
-  const date = new Date(isoDate);
-  if (isNaN(date.getTime())) {
-    throw new Error("Invalid ISO date format");
-  }
-  return date;
+import type { TIsoDate } from "../types/TIsoDate";
+
+export const isoDateToDate = (isoDate: TIsoDate): Date => {
+  return new Date(isoDate);
 };
 
 export const dateFormat = (date: Date, locale: string = "en-US", options?: Intl.DateTimeFormatOptions): string => {

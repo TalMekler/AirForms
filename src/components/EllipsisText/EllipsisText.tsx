@@ -1,17 +1,10 @@
-import {
-    Typography,
-    type TypographyProps
-} from "@mui/material";
+import { Typography, type TypographyProps } from "@mui/material";
 
 type EllipsisTextProps = {
   text: string;
   numOfRows?: number;
 };
-const EllipsisText = ({
-  text,
-  numOfRows,
-  ...typographyProps
-}: EllipsisTextProps & Omit<TypographyProps, "children">) => {
+const EllipsisText = ({ text, numOfRows, ...typographyProps }: EllipsisTextProps & Omit<TypographyProps, "children">) => {
   if (numOfRows && numOfRows < 1) {
     throw new Error("numOfRows must be at least 1");
   }

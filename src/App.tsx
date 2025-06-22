@@ -19,7 +19,14 @@ function App() {
             </Page>
           }
         />
-        <Route path="*" element={<Typography>Page Not Found</Typography>} />
+        <Route
+          path="*"
+          element={
+            <Page>
+              <Typography>Page Not Found</Typography>
+            </Page>
+          }
+        />
       </Routes>
       <Box>
         <GenericStrip<TForm>
