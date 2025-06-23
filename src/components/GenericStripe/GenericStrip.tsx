@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import type { GenericStripProps } from "./GenericStrip.types";
+import type { GenericStripProps, GridItemProps } from "./GenericStrip.types";
 
 const GenericStrip = <T,>({
   title,
@@ -14,8 +14,8 @@ const GenericStrip = <T,>({
     xs: 12,
     sm: 6,
     md: 4,
-    lg: 3
-  },
+    lg: 3,
+  } as GridItemProps,
   maxItemsToShow,
   emptyMessage = "אין פריטים להצגה",
   actionButton,
@@ -24,27 +24,23 @@ const GenericStrip = <T,>({
   const itemsToRender = maxItemsToShow ? items.slice(0, maxItemsToShow) : items;
 
   return (
-    <Box 
+    <Box
       sx={{
-        width: '100%',
-        padding: { xs: 2, sm: 3, md: 4 },
-        margin: '0 auto'
+        width: "100%",
+        maxWidth: "2000px",
+        marginX: "auto",
       }}
     >
       {/* כותרת הסטריפ */}
-      <Box 
-        display="flex" 
-        justifyContent="center" 
-        mb={3}
-        sx={{
-          "& .MuiTypography-root": {
-            fontSize: { xs: '1.5rem', sm: '1.75rem' },
+      <Box display="flex" justifyContent="center" mb={3}>
+        <Typography
+          variant="h5"
+          sx={{
+            fontSize: { xs: "1.5rem", sm: "1.75rem" },
             fontWeight: 600,
-            textAlign: 'center'
-          }
-        }}
-      >
-        <Typography variant="h5">
+            textAlign: "center",
+          }}
+        >
           {title}
         </Typography>
       </Box>
@@ -54,41 +50,34 @@ const GenericStrip = <T,>({
           {emptyMessage}
         </Typography>
       ) : (
-        <Grid 
-          container 
-          {...gridProps} 
-          sx={{ 
-            width: '100%',
-            margin: '0 auto',
-            ...gridProps?.sx 
-          }}
-        >
-          {itemsToRender.map((item, index) => (
-            <Grid 
-              item 
-              key={index} 
-              {...itemGridProps}
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                ...itemGridProps?.sx
-              }}
-            >
-              {renderItem(item)}
-            </Grid>
-          ))}
+        <>
+          <Grid
+            container
+            {...gridProps}
+            sx={{
+              width: "100%",
+              margin: "0 auto",
+              ...gridProps?.sx,
+            }}
+          >
+            {itemsToRender.map((item, index) => (
+              <Grid
+                item
+                key={index}
+                {...itemGridProps}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  ...itemGridProps?.sx,
+                }}
+              >
+                {renderItem(item)}
+              </Grid>
+            ))}
+          </Grid>
 
           {(actionButton || actionButtonText) && (
-            <Grid 
-              item 
-              {...itemGridProps}
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                ...itemGridProps?.sx
-              }}
-            >
+            <Box mt={2} display="flex" justifyContent="flex-end">
               {actionButton ?? (
                 <Typography
                   variant="body2"
@@ -97,7 +86,7 @@ const GenericStrip = <T,>({
                     color: "primary.main",
                     display: "inline-flex",
                     alignItems: "center",
-                    fontSize: { xs: '0.875rem', sm: '1rem' }
+                    fontSize: { xs: "0.875rem", sm: "1rem" },
                   }}
                 >
                   {actionButtonText}
@@ -106,9 +95,9 @@ const GenericStrip = <T,>({
                   </Box>
                 </Typography>
               )}
-            </Grid>
+            </Box>
           )}
-        </Grid>
+        </>
       )}
     </Box>
   );
