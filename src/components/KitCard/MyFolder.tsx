@@ -35,7 +35,6 @@ const MyFolder = ({ kit }: Props) => {
                         fontSize: 30,
                         transform: "rotate(200deg)",
                         zIndex: 2,
-                        backgroundColor: "white",
                         borderRadius: "50%",
                     }}
                 />
