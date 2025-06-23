@@ -1,4 +1,4 @@
-import { Chip, Stack, type StackProps } from "@mui/material";
+import { Box, Chip, Stack, type BoxProps, type StackProps } from "@mui/material";
 import { type ComponentProps, type PropsWithChildren, type ReactNode } from "react";
 import { KitCardContext, useKitCardContext } from "../../context/KitCardContext";
 import type { TKit } from "../../types/TKit";
@@ -46,6 +46,15 @@ KitCard.Categories = ({ renderItem, maxItemsToRender }: KitCardCategoriesProps) 
         )
     ) : (
         <></>
+    );
+};
+
+KitCard.Image = ({ ...props }: Omit<BoxProps, "children">) => {
+    const { image } = useKitCardContext();
+    return (
+        <Box {...props}>
+            <img src={image} style={{ width: "100%", height: "100%" }} />
+        </Box>
     );
 };
 

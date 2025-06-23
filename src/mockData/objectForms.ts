@@ -144,4 +144,5 @@ export const kitForm: TKit = {
     forms: objectForm, // Array of forms included in the kit
     author: objectForm[0].author,
     createdAt: "2023-10-01T12:00:00Z",
+    image: "https://picsum.photos/200",
 }

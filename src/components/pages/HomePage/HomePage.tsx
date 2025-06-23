@@ -3,6 +3,8 @@ import { Box, IconButton, InputAdornment, Stack, TextField } from "@mui/material
 import FilterCategories from "../../FilterCategories/FilterCategories";
 import { filterCategories } from "../../FilterCategories/utils/filterCategories";
 import HeroSection from "../../HeroSection/HeroSection";
+import SearchKitCard from "../../KitCard/SearchKitCard";
+import { kitForm } from "../../../mockData/objectForms";
 
 const HomePage = () => {
   return (
