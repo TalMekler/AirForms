@@ -1,14 +1,30 @@
-import { Typography, type TypographyProps } from "@mui/material";
+import {
+  Typography,
+  type TypographyProps
+} from "@mui/material";
 
 type EllipsisTextProps = {
   text: string;
   numOfRows?: number;
+  maxChars?: number;
 };
-const EllipsisText = ({ text, numOfRows, ...typographyProps }: EllipsisTextProps & Omit<TypographyProps, "children">) => {
+const EllipsisText = ({
+  text,
+  numOfRows,
+  maxChars,
+  ...typographyProps
+
+}: EllipsisTextProps & Omit<TypographyProps, "children">) => {
   if (numOfRows && numOfRows < 1) {
     throw new Error("numOfRows must be at least 1");
   }
   const { sx, ...otherTypographyProps } = typographyProps;
+
+  const truncatedText =
+    maxChars && text.length > maxChars
+      ? text.slice(0, maxChars) + "…"
+      : text;
+
   return numOfRows ? (
     <Typography
       {...otherTypographyProps}
@@ -21,10 +37,10 @@ const EllipsisText = ({ text, numOfRows, ...typographyProps }: EllipsisTextProps
         textOverflow: "ellipsis",
       }}
     >
-      {text}
+      {truncatedText}
     </Typography>
   ) : (
-    <Typography {...typographyProps}> {text} </Typography>
+    <Typography {...typographyProps}> {truncatedText}  </Typography>
   );
 };
 
