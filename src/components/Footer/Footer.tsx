@@ -1,50 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import FooterLogo from "../../assets/FooterLogo.svg";
 
 const Footer = () => {
   return (
-    <Box
-      component="footer"
-      sx={{
-        width: "100%",
-        height: "205px",
-        backgroundColor: "#fff",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          width: "1663px",
-          alignItems: "center",
-          flexDirection: "row-reverse",
-          direction: "rtl",
-          justifyContent: "space-between",
-          gap: "124px",
-        }}
-      >
-        <Box sx={{ width: "342px" }}>
-          <Typography
-            sx={{
-              fontFamily: "assistant",
-              color: "#77829E",
-              fontSize: "16px",
-              whiteSpace: "pre-line",
-              direction: "ltr",
-            }}
-          >
-            הממשק הדיגיטלי החדש של חיל האוויר הוא קפיצת{"\n"}
-            המדרגה בעולם הניהול והבקשות. כל הטפסים במקום אחד.
-          </Typography>
-        </Box>
-
-        <Box sx={{ width: "233.45px", height: "50.6px" }}>
-          <img src={FooterLogo} alt="AirForms Logo" style={{ height: "100%" }} />
-        </Box>
-      </Box>
-    </Box>
+    <Stack component="footer" px={"7.5rem"} py={"4.6875rem"} bgcolor={"white"} width={"100%"} direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
+      <Typography variant="body1" maxWidth={"21.375rem"} fontFamily={"Assistant"} color="#77829E" whiteSpace={"pre-line"}>
+        הממשק הדיגיטלי החדש של חיל האוויר הוא קפיצת המדרגה בעולם הניהול והבקשות. כל הטפסים במקום אחד.
+      </Typography>
+      <img src={FooterLogo} alt="AirForms Logo" style={{ height: "100%" }} />
+    </Stack>
   );
 };
 
