@@ -8,5 +8,6 @@ export type TKit = {
     categories: string[],
     forms: TForm[],
     author: TUser,
-    createdAt: TIsoDate;
+    createdAt: TIsoDate,
+    image?: string,
 }
