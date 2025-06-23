@@ -1,9 +1,12 @@
 import type { TForm } from "./TForm"
+import type { TIsoDate } from "./TIsoDate";
 import type { TUser } from "./TUser"
 
 export type TKit = {
     title: string,
     description: string,
-    forms: TForm[]
-    author: TUser
+    categories: string[],
+    forms: TForm[],
+    author: TUser,
+    createdAt: TIsoDate;
 }
