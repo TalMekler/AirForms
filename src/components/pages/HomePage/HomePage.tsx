@@ -39,9 +39,6 @@ const HomePage = () => {
         </Box>
       </Stack>
       <FilterCategories filterCategories={filterCategories} />
-      <Box>
-        <FormCardBackgroundImage form={myForms[0]} />
-      </Box>
     </Box>
   );
 };
