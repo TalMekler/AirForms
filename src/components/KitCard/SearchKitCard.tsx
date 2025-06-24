@@ -1,6 +1,6 @@
 import { Bookmark, IosShare } from '@mui/icons-material';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Chip, Stack, Typography } from "@mui/material";
 import type { TKit } from "../../types/TKit";
 import { dateFormat, isoDateToDate } from "../../utils/datetime";
 import UserCard from "../UserCard/UserCard";
@@ -92,8 +92,13 @@ const SearchKitCard = ({ kit }: Props) => {
                                     <DisplayListForms kit={kit} start={0} end={3} />
                                     <DisplayListForms kit={kit} start={3} end={6} />
                                 </Box>
+
                             </Box>
+                            <Stack direction={"row"} gap={"0.3125rem"}>
+                                <KitCard.Categories maxItemsToRender={3} renderItem={(st: string) => <Chip label={st} sx={{ bgcolor: "#def5fe" }} />} />
+                            </Stack>
                         </Stack>
+
                     </Stack>
                 </KitCard>
             </Box>

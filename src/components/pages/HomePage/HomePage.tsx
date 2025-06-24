@@ -39,6 +39,7 @@ const HomePage = () => {
         </Box>
       </Stack>
       <FilterCategories filterCategories={filterCategories} />
+      <SearchKitCard kit={kitForm} />
     </Box>
   );
 };
