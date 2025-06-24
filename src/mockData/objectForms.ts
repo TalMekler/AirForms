@@ -137,11 +137,98 @@ export const objectForm: TForm[] = [
 ];
 
 
-export const kitForm: TKit = {
-    title: "ערכת טפסים לדוגמא",
+export const kitForm1: TKit = {
+    title: "קצר",
+    description: "תיאור.",
+    categories: ["קצר"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-01-01T08:00:00Z",
+};
+
+export const kitForm2: TKit = {
+    title: "ערכת טפסים רפואיים",
+    description: "מסמכים רפואיים למרפאות ובתי חולים.",
+    categories: ["רפואה", "בריאות", "טפסים"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-02-10T10:30:00Z",
+};
+
+export const kitForm3: TKit = {
+    title: "ערכת טפסים חינוכיים עם שם ממש ממש ממש ארוך שיכול לשבור את הקארד אם לא מוגדר נכון",
+    description: "טפסים למורים, תלמידים ובתי ספר.",
+    categories: ["חינוך", "למידה", "בית ספר"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-03-15T09:45:00Z",
+};
+
+export const kitForm4: TKit = {
+    title: "משפטיים",
+    description: "ערכת תבניות משפטיות לעורכי דין הכוללת חוזים, הסכמים, כתבי תביעה, מכתבי ייפוי כוח ועוד הרבה מסמכים חשובים שחייבים להיות בצורה מסודרת ונגישה – במיוחד כשמדובר במערכות משפט או גופים רשמיים שדורשים פורמט אחיד ומדויק.",
+    categories: ["משפט", "חוזים", "טפסים"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-04-20T14:15:00Z",
+};
+
+export const kitForm5: TKit = {
+    title: "ערכת טפסים לסטודנטים",
+    description: "",
+    categories: [],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-05-05T11:00:00Z",
+};
+
+export const kitForm6: TKit = {
+    title: "טכניים",
+    description: "טפסים לתיעוד טכני.",
+    categories: ["טכני"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-06-18T13:30:00Z",
+};
+
+export const kitForm7: TKit = {
+    title: "ערכת טפסים פיננסיים",
+    description: "חשבוניות, קבלות ודוחות כספיים.",
+    categories: ["כספים", "פיננסים", "חשבונאות"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-07-12T16:20:00Z",
+};
+
+export const kitForm8: TKit = {
+    title: "ערכת עמותות",
+    description: "כלים ניהוליים לארגונים ללא מטרת רווח.",
+    categories: ["עמותה", "ניהול"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-08-22T10:10:00Z",
+};
+
+export const kitForm9: TKit = {
+    title: "ערכת לוגיסטיקה",
+    description: "טפסים לניהול מלאי, שילוח, קבלה, אחסון, מעקב מחסן והפקת דוחות תפעוליים – כל מה שצריך לארגון לוגיסטי או עסק.",
+    categories: ["לוגיסטיקה", "מלאי", "שילוח", "דוחות", "מעקב", "ניהול"],
+    forms: objectForm,
+    author: objectForm[0].author,
+    createdAt: "2023-09-01T07:55:00Z",
+};
+
+export const kitForm10: TKit = {
+    title: "דוגמה רגילה",
     description: "ערכת טפסים לדוגמא המכילה מספר טפסים שונים לשימוש.",
     categories: ["דוגמאות", "טפסים", "ערכת טפסים"],
-    forms: objectForm, // Array of forms included in the kit
+    forms: objectForm,
     author: objectForm[0].author,
     createdAt: "2023-10-01T12:00:00Z",
-}
+};
+
+
+export const allMockKits = [
+    kitForm1, kitForm2, kitForm3, kitForm4, kitForm5,
+    kitForm6, kitForm7, kitForm8, kitForm9, kitForm10,
+];
