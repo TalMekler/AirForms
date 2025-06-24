@@ -2,26 +2,26 @@ import type { TKit } from '../types/Kit';
 import type { TForm } from '../types/TForm';
 
 export const form: TForm = {
-  id: '1',
-  title: 'בדיקה 1',
-  description: 'לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר ',
-  createdAt: '2023-10-01T12:00:00Z',
-  updatedAt: '2023-10-01T12:00:00Z',
+  id: "1",
+  title: "בדיקה 1",
+  description: "לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר לורם איפסום דולור סיט אמט, קונסקטורר ",
+  createdAt: "2023-10-01T12:00:00Z",
+  updatedAt: "2023-10-01T12:00:00Z",
   isPublished: false,
   author: {
-    id: 'user-1',
-    firstName: 'טל',
-    lastName: 'מקלר',
-    email: 'asd@gmail.com',
-    image: 'https://picsum.photos/200', // URL to the user's image or null if not available
-    createdAt: '2023-10-01T12:00:00Z',
-    phoneNumber: '0534657876',
+    id: "user-1",
+    firstName: "טל",
+    lastName: "מקלר",
+    email: "asd@gmail.com",
+    image: "https://picsum.photos/200", // URL to the user's image or null if not available
+    createdAt: "2023-10-01T12:00:00Z",
+    phoneNumber: "0534657876",
   },
-  image: 'https://picsum.photos/200',
-  categories: ['לוגיסטיקה', `אכ״א`, 'דחיפות'],
-  tags: ['דוגמא', 'דמו', 'טופס'],
+  image: "https://picsum.photos/200",
+  categories: ["לוגיסטיקה", `אכ״א`, "דחיפות"],
+  tags: ["דוגמא", "דמו", "טופס"],
   expirationDate: null,
-  timeToFill: '5 דק׳', // estimated time to fill the form
+  timeToFill: "5 דק׳", // estimated time to fill the form
 };
 
 export const form2: TForm = {
