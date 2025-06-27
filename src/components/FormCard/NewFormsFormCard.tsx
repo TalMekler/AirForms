@@ -10,7 +10,7 @@ type NewFormsFormCardProps = {
 };
 const NewFormsFormCard = ({ form }: NewFormsFormCardProps) => {
   return (
-    <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={3} maxWidth={400} bgcolor={"white"}>
+    <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={`0 1px 10px 0 #001C5533`} maxWidth={400} bgcolor={"white"}>
       <Stack
         justifyContent={"end"}
         height={160}
