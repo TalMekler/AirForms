@@ -5,8 +5,9 @@ import FormCard from "./FormCard";
 
 type MyFormsFormCardProps = {
   form: TForm;
+  displayStatus?: boolean;
 };
-const MyFormsFormCard = ({ form }: MyFormsFormCardProps) => {
+const MyFormsFormCard = ({ form, displayStatus }: MyFormsFormCardProps) => {
   return (
     <>
       <FormCard form={form} width={"100%"} height={"100%"} borderRadius={2} overflow={"hidden"} boxShadow={`0 1px 10px 0 #001C5533`} maxWidth={400}>
@@ -18,7 +19,7 @@ const MyFormsFormCard = ({ form }: MyFormsFormCardProps) => {
               </Box>
               <FormCard.Title variant="h3" fontSize={20} fontWeight={600} numOfRows={1} />
             </Stack>
-            <FormCard.IsPublishedChip />
+            {displayStatus && <FormCard.IsPublishedChip />}
             <Stack direction={"row"} alignItems={"center"} gap={"0.5625rem"}>
               <Stack direction={"row"} gap={"0.3125rem"}>
                 <Bookmark />

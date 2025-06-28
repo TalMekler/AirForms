@@ -36,7 +36,7 @@ const HomePage = () => {
 
       <Stack gap={"9.375rem"} mt={"7.5rem"}>
         <HomePageCardsStripe title="טפסים חדשים" items={myForms.slice(0, 4) as TForm[]} renderItem={(form) => <NewFormsFormCard form={form as TForm} />} buttonText="לכל הטפסים" buttonOnClick={() => {}} />
-        <HomePageCardsStripe title="טפסים שיצרתי" items={myForms.slice(0, 8) as TForm[]} renderItem={(form) => <MyFormsFormCard form={form as TForm} />} buttonText="לכל היצירות" buttonOnClick={() => {}} />
+        <HomePageCardsStripe title="טפסים שיצרתי" items={myForms.slice(0, 8) as TForm[]} renderItem={(form) => <MyFormsFormCard displayStatus form={form as TForm} />} buttonText="לכל היצירות" buttonOnClick={() => {}} />
         <HomePageCardsStripe title="התיקיות שלי" items={[]} renderItem={(form) => <MyFormsFormCard form={form as TForm} />} buttonText="לכל התיקיות" buttonOnClick={() => {}} />
         <HomePageCardsStripe title="מועדפים" items={[...myForms.slice(0, 4), kit1, kit1, kit1, kit1]} renderItem={(item: TForm | TKit) => ("forms" in item ? <Typography>TKit</Typography> : <MyFormsFormCard form={item} />)} buttonText="מועדפים נוספים" buttonOnClick={() => {}} />
       </Stack>
