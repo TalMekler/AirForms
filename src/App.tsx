@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Page from './components/Page/Page';
-import HomePage from './components/pages/HomePage/HomePage';
+import { Typography } from "@mui/material";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Page from "./components/Page/Page";
+import HomePage from "./components/pages/HomePage/HomePage";
 
 function App() {
   return (

@@ -2,6 +2,7 @@ import { Box, Stack } from "@mui/material";
 import React, { type PropsWithChildren } from "react";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import AdvancedFilterBar from "../AdvancedFilterBar/AdvancedFilterBar";
 
 type PageProps = {};
 const Page = ({ children }: PropsWithChildren<PageProps>) => {
@@ -14,6 +15,7 @@ const Page = ({ children }: PropsWithChildren<PageProps>) => {
         {children}
       </Box>
       <Box bgcolor={"white"}>
+        {/* <AdvancedFilterBar /> */}
         <Footer />
       </Box>
     </Stack>

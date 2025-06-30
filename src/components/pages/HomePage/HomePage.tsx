@@ -1,8 +1,8 @@
 import { Search, Tune } from "@mui/icons-material";
 import { Box, IconButton, InputAdornment, Stack, TextField } from "@mui/material";
-import FilterCategories from "../../FilterCategories/FilterCategories";
-import { filterCategories } from "../../FilterCategories/utils/filterCategories";
 import HeroSection from "../../HeroSection/HeroSection";
+// import FilterCategoriesSection from "../../AdvancedFilterBar/FilterCategoriesSection";
+import FilterPanel from "../../AdvancedFilterBar/FilterPanel";
 
 const HomePage = () => {
   return (
@@ -36,7 +36,9 @@ const HomePage = () => {
           </IconButton>
         </Box>
       </Stack>
-      <FilterCategories filterCategories={filterCategories} />
+      {/* <FilterCategories filterCategories={filterCategories} /> */}
+      {/* <FilterCategoriesSection /> */}
+      <FilterPanel />
     </Box>
   );
 };
